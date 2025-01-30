@@ -1,0 +1,221 @@
+Logical Problem:
+	Design a class Student with methods to compute the average grade and determine if the student has passed based on the average. Create a few student objects and test the functionality.
+
+
+Program
+
+
+package com.Quasariz.Sampleprograms;
+import java.util.Scanner;
+class student
+{
+    Scanner sc=new Scanner(System.in);
+    String name="";
+    String id="";
+    double total=0,avg;
+    int[] marks=new int[5];
+
+    public void getDetails()//accepting student details including marks
+    {
+        System.out.println("Enter name?");
+        name=sc.nextLine();
+        System.out.println("Enter id?");
+        id=sc.nextLine();
+        System.out.println("Enter  marks");
+        for(int i=0;i<5;i++)
+        {
+            marks[i]=sc.nextInt();
+            total=total+marks[i];
+            avg=total/5;
+        }
+    }
+
+    public void GradeDetails()//displaying student details including grade
+    {
+        System.out.println("Name :"+name);
+        System.out.println("ID :"+id);
+        System.out.println("Total :"+total);
+        System.out.println("Average :"+avg);
+        if(avg>=90)
+        {
+            System.out.println("Grade A");
+        } else if (avg>=70) {
+            System.out.println("Grade B");
+        } else if (avg>=50) {
+            System.out.println("Grade C");
+        }
+        else
+        {
+            System.out.println("Grade D");
+        }
+    }
+}
+
+//main method initializing new objects
+public class StudentGrade {
+    public static void main(String[] args) {
+
+       student s1=new student();
+       student s2=new student();
+        s1.getDetails();
+        s2.getDetails();
+        s1.GradeDetails();
+        s2.GradeDetails();
+    }
+}
+
+
+Output
+
+
+Enter name?
+alphy
+Enter id?
+q1
+Enter  marks
+90
+80
+89
+88
+99
+Enter name?
+felix
+Enter id?
+q2
+Enter  marks
+56
+67
+78
+89
+90
+Name :alphy
+ID :q1
+Total :446.0
+Average :89.2
+Grade B
+Name :felix
+ID :q2
+Total :380.0
+Average :76.0
+Grade B
+
+
+
+
+Task
+
+Implement a simple class with methods and attributes (e.g., a Car class).
+
+
+Program
+
+
+package com.Quasariz.Sampleprograms;
+class CarDetails
+{
+    String model="";
+    String company="";
+    String color="";
+
+    public void printModel(String m1)
+    {
+        model=m1;
+       System.out.println("Model is "+model);
+
+    }
+    public void printCompany( String c1)
+    {
+        company=c1;
+        System.out.println("Company is "+company);
+
+    }
+    public void printColor(String cl1)
+    {
+        color=cl1;
+        System.out.println("Color is "+color);
+
+    }
+}
+public class Car
+{
+    public static void main(String[] args)
+    {
+        CarDetails c1=new CarDetails();
+        c1.printModel("i20");
+        c1.printCompany("hundai");
+        c1.printColor("red");
+    }
+}
+
+
+
+output
+
+Model is i20
+Company is hundai
+Color is red
+
+
+Logical Problem:
+	Implement a class hierarchy for Shape with derived classes Circle, Rectangle, and Triangle. Write a method to compute the area for each shape.
+
+Input :
+
+package com.Quasariz.Sampleprograms;
+abstract class Shape{
+     abstract double calculateArea();
+}
+class Circle extends Shape{
+    private double radius;
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+    public double calculateArea () {
+        return Math.PI* radius * radius;
+    }
+
+}
+class Rectangle extends Shape{
+    private double width;
+    private double height;
+    public Rectangle(double width, double height) {
+        this.width = width;
+        this.height = height;
+    }
+   
+    public double calculateArea () {
+        return width * height;
+    }
+}
+class Triangle extends Shape{
+    private double base;
+    private double height;
+    public Triangle(double base, double height) {
+        this.base = base;
+        this.height = height;
+    }
+    public double calculateArea () {
+        return 0.5*base*height;
+    }
+}
+public class shape {
+    public static void main(String[] args) {
+        Shape circle= new Circle(5.0);
+        Shape rectangle= new Rectangle(4.0,6.0);
+        Shape triangle= new Triangle(3.0,8.0);
+        System.out.println("Circle Area :"+circle. calculateArea ());
+      System.out.println("Rectangle Area:"+rectangle. calculateArea ());
+      System.out.println("Triangle Area :"+triangle. calculateArea ());
+    }
+}
+
+OutPut :
+
+
+Circle Area : 78.53981633974483
+Rectangle Area:24.0
+Triangle Area :12.0
+
+
+
+
