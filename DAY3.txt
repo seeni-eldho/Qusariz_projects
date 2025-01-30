@@ -1,0 +1,152 @@
+
+Tasks:
+	Study encapsulation (using private fields and public getters/setters) and abstraction (abstract classes and interfaces).
+	Modify your existing class examples to include encapsulation and abstraction.
+program
+package com.Qusariz;
+
+public class shape {
+    public static void main(String[] args) {
+        Area circle= new Circle(6.0);
+        Area rectangle= new Rectangle(4.0,7.0);
+        Area triangle= new Triangle(4.0,8.0);
+        System.out.println("Circle Area :"+circle. calculateArea ());
+        System.out.println("Rectangle Area:"+rectangle. calculateArea ());
+        System.out.println("Triangle Area :"+triangle. calculateArea ());
+    }
+}
+package com.Qusariz;
+
+abstract class Area{
+    abstract double calculateArea();
+}
+package com.Qusariz;
+class Circle extends Area{
+
+    private double radius;
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    public double getRadius() {
+        return radius;
+    }
+
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+
+    public double calculateArea () {
+        return Math.PI* radius * radius;
+    }
+package com.Qusariz;
+class Rectangle extends Area{
+    private double width;
+    private double height;
+
+    public Rectangle(double width, double height) {
+        this.width = width;
+        this.height = height;
+    }
+    public double getWidth() {
+        return width;
+    }
+
+    public void setWidth(double width) {
+        this.width = width;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
+
+
+
+    public double calculateArea () {
+        return width * height;
+    }
+package com.Qusariz;
+class Triangle extends Area{
+    private double height;
+    private double base;
+
+    public Triangle(double base, double height) {
+        this.base = base;
+        this.height = height;
+    }
+
+    public double getBase() {
+        return base;
+    }
+
+    public void setBase(double base) {
+        this.base = base;
+    }
+
+
+    public double getHeight() {
+        return height;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
+
+
+    public double calculateArea () {
+        return 0.5*base*height;
+    }
+}
+output
+Circle Area :113.09733552923255
+Rectangle Area:28.0
+Triangle Area :16.0
+
+Logical Problem:
+	Create an abstract class Appliance with an abstract method turnOn(). Implement derived classes WashingMachine and Refrigerator with specific implementations of turnOn().
+PROGRAM
+package com.Qusariz;
+
+abstract class Appliance{
+    //Abstract method to turn on appliace
+    public abstract void turnon();
+}
+package com.Qusariz;
+
+class WashingMachine extends Appliance{
+    @Override
+    public void turnon() {
+        System.out.println("Turn on the washing machine");
+    }
+}
+package com.Qusariz;
+
+public class Refrigerator extends Appliance {
+    public void turnon() {
+
+        System.out.println("Turn on the Refrigerator");
+    }
+}
+package com.Qusariz;
+
+public class ApplianceTest {
+    public static void main(String[] args) {
+        //Creates instance of WashingMachine and Refrigerator
+        Appliance WM=new WashingMachine();
+        Appliance RF=new Refrigerator();
+
+        //Calling method
+        WM.turnon();
+        RF.turnon();
+    }
+}
+OUTPUT
+Turn on the washing machine
+Turn on the Refrigerator
+
+
